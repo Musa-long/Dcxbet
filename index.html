@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DCX BET - Sports Betting | Win Big</title>
+<meta property="og:title" content="DCX BET - 200% Welcome Bonus + Free Bets">
+<meta property="og:description" content="Bet on Premier League, La Liga & more. Fast payout, Binance partner.">
+<meta property="og:image" content="https://dco-lhpp.onrender.com/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
+body{background:#0a0e1a;color:#fff}
+.header{background:#0f1629;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;position:sticky;top:0;z-index:10}
+.logo{font-weight:900;font-size:20px;color:#00ff88} .logo span{color:#fff}
+.wallet{background:#1e293b;padding:8px 14px;border-radius:20px;font-weight:bold;font-size:14px}
+.wallet b{color:#00ff88}
+.nav{display:flex;gap:5px;padding:10px;background:#0f1629;overflow-x:auto}
+.nav button{background:#1e293b;border:0;color:#94a3b8;padding:8px 15px;border-radius:20px;white-space:nowrap;cursor:pointer}
+.nav button.active{background:#2563eb;color:#fff}
+.league{padding:10px 15px;background:#111827;font-size:12px;color:#94a3b8;margin-top:8px}
+.match{background:#1a2332;margin:0 10px 10px;border-radius:10px;padding:12px;border-left:3px solid #2563eb}
+.teams{display:flex;justify-content:space-between;align-items:center;font-weight:bold;margin-bottom:8px}
+.time{font-size:11px;color:#00ff88}
+.odds{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.odd-btn{background:#0f172a;border:1px solid #334155;padding:10px;border-radius:8px;text-align:center;cursor:pointer}
+.odd-btn:hover{border-color:#00ff88} .odd-btn.selected{background:#2563eb;border-color:#2563eb}
+.odd-btn small{display:block;font-size:10px;color:#94a3b8} .odd-btn b{font-size:15px}
+.betslip{position:fixed;bottom:0;left:0;right:0;background:#0f1629;border-top:2px solid #2563eb;padding:12px;max-height:50vh;overflow:auto;display:none}
+.betslip.show{display:block}
+.bet-item{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+.btn-bet{width:100%;background:linear-gradient(90deg,#00ff88,#2563eb);border:0;padding:14px;border-radius:10px;font-weight:900;color:#000;font-size:16px;cursor:pointer;margin-top:10px}
+.bet-count{background:#00ff88;color:#000;padding:2px 8px;border-radius:10px;font-size:12px;margin-left:5px}
+.ad-box{background:#1e293b;margin:10px;border:2px dashed #334155;padding:20px;text-align:center;border-radius:10px;font-size:12px;color:#64748b}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="logo">DCX<span>BET</span></div>
+<div class="wallet">Balance: <b id="bal">50.00 USDT</b></div>
+</div>
+<div class="nav">
+<button class="active">⚽ Football</button><button>🏀 Basketball</button><button>🎮 Esports</button><button>🔥 Live</button>
+</div>
+
+<div class="league">🏴󐁧󐁢󐁥󐁮󐁧󐁿 PREMIER LEAGUE - TODAY</div>
+<div class="match" data-match="Man City vs Arsenal">
+<div class="teams"><span>Man City vs Arsenal</span><span class="time">18:30</span></div>
+<div class="odds">
+<div class="odd-btn" onclick="addBet(this,'Man City','1.85','Man City vs Arsenal')"><small>1</small><b>1.85</b></div>
+<div class="odd-btn" onclick="addBet(this,'Draw','3.40','Man City vs Arsenal')"><small>X</small><b>3.40</b></div>
+<div class="odd-btn" onclick="addBet(this,'Arsenal','4.20','Man City vs Arsenal')"><small>2</small><b>4.20</b></div>
+</div>
+</div>
+
+<div class="match" data-match="Liverpool vs Chelsea">
+<div class="teams"><span>Liverpool vs Chelsea</span><span class="time">20:00</span></div>
+<div class="odds">
+<div class="odd-btn" onclick="addBet(this,'Liverpool','2.10','Liverpool vs Chelsea')"><small>1</small><b>2.10</b></div>
+<div class="odd-btn" onclick="addBet(this,'Draw','3.25','Liverpool vs Chelsea')"><small>X</small><b>3.25</b></div>
+<div class="odd-btn" onclick="addBet(this,'Chelsea','3.00','Liverpool vs Chelsea')"><small>2</small><b>3.00</b></div>
+</div>
+</div>
+
+<div class="ad-box">YOUR ADSENSE / ADSTERRA AD CODE HERE - You earn per view</div>
+
+<div class="league">🇪🇸 LA LIGA</div>
+<div class="match" data-match="Real Madrid vs Barcelona">
+<div class="teams"><span>Real Madrid vs Barcelona</span><span class="time">21:00</span></div>
+<div class="odds">
+<div class="odd-btn" onclick="addBet(this,'Real Madrid','2.25','Real vs Barca')"><small>1</small><b>2.25</b></div>
+<div class="odd-btn" onclick="addBet(this,'Draw','3.50','Real vs Barca')"><small>X</small><b>3.50</b></div>
+<div class="odd-btn" onclick="addBet(this,'Barcelona','2.90','Real vs Barca')"><small>2</small><b>2.90</b></div>
+</div>
+</div>
+
+<div class="league">🇳🇬 NPFL</div>
+<div class="match" data-match="Enyimba vs Rivers Utd">
+<div class="teams"><span>Enyimba vs Rivers Utd</span><span class="time">16:00</span></div>
+<div class="odds">
+<div class="odd-btn" onclick="addBet(this,'Enyimba','2.00','Enyimba vs Rivers')"><small>1</small><b>2.00</b></div>
+<div class="odd-btn" onclick="addBet(this,'Draw','3.10','Enyimba vs Rivers')"><small>X</small><b>3.10</b></div>
+<div class="odd-btn" onclick="addBet(this,'Rivers Utd','3.60','Enyimba vs Rivers')"><small>2</small><b>3.60</b></div>
+</div>
+</div>
+
+<div style="height:180px"></div>
+
+<div class="betslip" id="slip">
+<div style="display:flex;justify-content:space-between;margin-bottom:10px"><b>Betslip <span class="bet-count" id="count">0</span></b><span onclick="clearBets()" style="color:#ef4444;cursor:pointer">Clear</span></div>
+<div id="bets"></div>
+<div style="margin-top:10px">
+<div style="display:flex;justify-content:space-between;font-size:14px"><span>Stake:</span><input id="stake" type="number" value="5" style="width:80px;background:#1e293b;border:1px solid #334155;color:#fff;padding:5px;border-radius:5px;text-align:right" oninput="calc()"></div>
+<div style="display:flex;justify-content:space-between;margin-top:8px;font-weight:bold"><span>Potential Win:</span><span id="win" style="color:#00ff88">0.00 USDT</span></div>
+</div>
+<button class="btn-bet" onclick="placeBet()">PLACE BET - WIN NOW</button>
+<div style="text-align:center;margin-top:8px;font-size:11px;color:#94a3b8">Powered by DCX • Binance Partner</div>
+</div>
+
+<script>
+let bets=[], totalOdds=1;
+function addBet(el, pick, odd, match){
+ if(el.classList.contains('selected')){ el.classList.remove('selected'); removeBet(match); return; }
+ document.querySelectorAll(`[data-match="${match}"] .odd-btn`).forEach(b=>b.classList.remove('selected'));
+ el.classList.add('selected');
+ addOrUpdate(match,pick,odd);
+}
+function addOrUpdate(match,pick,odd){
+ let i=bets.findIndex(b=>b.match===match);
+ if(i>-1) bets[i]={match,pick,odd:parseFloat(odd)}; else bets.push({match,pick,odd:parseFloat(odd)});
+ render();
+}
+function removeBet(match){ bets=bets.filter(b=>b.match!==match); render(); }
+function render(){
+ const c=document.getElementById('bets'); c.innerHTML='';
+ totalOdds=1;
+ bets.forEach(b=>{ totalOdds*=b.odd; c.innerHTML+=`<div class="bet-item"><span>${b.match} - ${b.pick}</span><b>${b.odd}</b></div>` });
+ if(bets.length>0){ c.innerHTML+=`<div class="bet-item" style="border-top:1px solid #334155;margin-top:6px;padding-top:6px"><span>Total Odds</span><b>${totalOdds.toFixed(2)}</b></div>`; document.getElementById('slip').classList.add('show'); }
+ else document.getElementById('slip').classList.remove('show');
+ document.getElementById('count').innerText=bets.length;
+ calc();
+}
+function calc(){ const s=parseFloat(document.getElementById('stake').value)||0; document.getElementById('win').innerText=(s*totalOdds).toFixed(2)+' USDT'; }
+function clearBets(){ bets=[]; document.querySelectorAll('.odd-btn').forEach(b=>b.classList.remove('selected')); render(); }
+function placeBet(){
+ if(bets.length==0) return alert('Select odds first');
+ const stake=document.getElementById('stake').value;
+ const win=document.getElementById('win').innerText;
+ alert(`Bet Placed!\nStake: ${stake} USDT\nPotential Win: ${win}\n\nRedirecting to DCX to confirm...`);
+ window.location.href='https://dco-lhpp.onrender.com';
+}
+</script>
+</body>
+  </html>
